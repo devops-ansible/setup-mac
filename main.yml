@@ -5,20 +5,20 @@
   vars_files:
     - defaults.yml
 
-  vars_prompt:
-    - name: homebrew_user
-      prompt: What is the UserID of the new User?
-      private: no
-      default: "{{ lookup('env', 'USER') }}"
+  # vars_prompt:
+  #   - name: homebrew_user
+  #     prompt: What is the UserID of the new User?
+  #     private: no
+  #     default: "{{ lookup('env', 'USER') }}"
 
-    - name: newUserPass
-      prompt: What is the new Users Password password?    
+  #   - name: newUserPass
+  #     prompt: What is the new Users Password password?    
 
-  pre_tasks:
-    - include_vars: "{{ item }}"
-      with_fileglob:
-        - "{{ playbook_dir }}/config.yml"
-      tags: ['always']
+  # pre_tasks:
+  #   - include_vars: "{{ item }}"
+  #     with_fileglob:
+  #       - "{{ playbook_dir }}/config.yml"
+  #     tags: ['always']
 
   roles:
     - role: homebrew
@@ -30,5 +30,7 @@
       tags: ['mac_setup']
     - role: pip_packages
       tags: ['pip_packages']
+    - role: ansible_sublime_text3
+      tags: ['ansible_sublime_text3']
 
 ...
