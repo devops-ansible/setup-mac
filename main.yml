@@ -1,4 +1,5 @@
 ---
+# yamllint disable rule:trailing-spaces
 - hosts: localhost
   connection: local
 
