@@ -15,11 +15,11 @@
   #   - name: newUserPass
   #     prompt: What is the new Users Password password?    
 
-  # pre_tasks:
-  #   - include_vars: "{{ item }}"
-  #     with_fileglob:
-  #       - "{{ playbook_dir }}/config.yml"
-  #     tags: ['always']
+  pre_tasks:
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags: ['always']
 
   roles:
     - role: homebrew
@@ -35,3 +35,4 @@
       tags: ['ansible_sublime_text3']
 
 ...
+
