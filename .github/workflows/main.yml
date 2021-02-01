@@ -43,6 +43,10 @@ jobs:
       - name: Install test dependencies.
         run: sudo pip3 install ansible
 
+      - name: Set up the test environment.
+        run: |
+          ansible-galaxy install -r requirements.yml -p ./roles
+
       - name: Test the playbook's syntax.
         run: ansible-playbook main.yml --syntax-check
 
