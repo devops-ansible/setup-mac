@@ -19,11 +19,33 @@
       prompt: Shall we configure sublime?
       default: false  
 
+    - name: configureAsDevOps
+      prompt: Shall we configure sublime?
+      default: false
+      private: false
+
+    - name: configureAsConsultant
+      prompt: Shall we configure sublime?
+      default: false
+      private: false
+   
   pre_tasks:
     - include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags: ['always']
+
+    - include_vars for our favorites: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/consultantconfig.yml"
+      tags: ['always']
+      when: configureAsConsultant
+
+    - include_vars for our favorites: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/devopsconfig.yml"
+      tags: ['always']
+      when: configureAsDevOps
 
   roles:
     - role: homebrew
