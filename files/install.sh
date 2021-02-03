@@ -15,5 +15,5 @@ then
 fi
 
 cd ../
-ansible-galaxy install -r requirements.yml
+ansible-galaxy install -r requirements.yml  -p ./roles
 ansible-playbook -K main.yml
