@@ -43,6 +43,7 @@ homebrew_cask_apps:
   - intellij-idea
   - signal
   - logitech-options
+  - tunnelblick
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 # appstore_app_ids: []
