@@ -3,9 +3,6 @@
 - hosts: localhost
   connection: local
 
-  vars_files:
-    - defaults.yml
-
   vars_prompt:
     - name: configureSublime
       prompt: Shall we configure sublime?
