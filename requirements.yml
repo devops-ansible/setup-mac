@@ -1,6 +1,6 @@
 ---
 collections: []
-roles: 
+roles:
   - name: pip_packages
     src: https://github.com/devops-ansible/ansible-pip-packages.git
     version: master
